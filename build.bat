@@ -1,29 +1,24 @@
 @echo off
-chcp 65001 >nul
-title ساخت نسخه Production
+title Build HR Dashboard
 echo.
-echo ╔═══════════════════════════════════════════════════════════╗
-echo ║                                                           ║
-echo ║     ساخت نسخه Production پروژه                          ║
-echo ║                                                           ║
-echo ╚═══════════════════════════════════════════════════════════╝
+echo ========================================
+echo   Building HR Dashboard Production
+echo ========================================
 echo.
-echo در حال ساخت نسخه نهایی...
+echo Building project...
 echo.
 call npm run build
 echo.
 if %errorlevel% equ 0 (
     echo.
-    echo ╔═══════════════════════════════════════════════════════════╗
-    echo ║                                                           ║
-    echo ║     ✅ ساخت با موفقیت انجام شد!                          ║
-    echo ║                                                           ║
-    echo ║     فایل‌های خروجی در پوشه dist قرار دارند              ║
-    echo ║                                                           ║
-    echo ╚═══════════════════════════════════════════════════════════╝
+    echo ========================================
+    echo   Build completed successfully!
+    echo ========================================
+    echo.
+    echo Output files are in the dist folder
 ) else (
     echo.
-    echo ❌ خطا در ساخت پروژه!
+    echo ERROR: Build failed!
 )
 echo.
 pause

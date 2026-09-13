@@ -1,65 +1,61 @@
 @echo off
-chcp 65001 >nul
-title شروع سریع - HR Dashboard
+title HR Dashboard - Quick Start
 echo.
-echo ╔═══════════════════════════════════════════════════════════╗
-echo ║                                                           ║
-echo ║     شروع سریع سیستم مدیریت منابع انسانی                 ║
-echo ║                                                           ║
-echo ╚═══════════════════════════════════════════════════════════╝
+echo ========================================
+echo   HR Dashboard - Quick Start
+echo ========================================
 echo.
 
-:: بررسی نصب بودن Node.js
+:: Check Node.js
 where node >nul 2>nul
 if %errorlevel% neq 0 (
-    echo ❌ Node.js نصب نیست!
+    echo ERROR: Node.js is not installed!
     echo.
-    echo لطفاً Node.js را از آدرس زیر دانلود و نصب کنید:
+    echo Please download and install Node.js from:
     echo https://nodejs.org/
     echo.
     pause
     exit /b 1
 )
 
-:: نمایش نسخه Node
-echo ✅ Node.js نصب است:
+echo Node.js version:
 node --version
 echo.
 
-:: بررسی node_modules
+:: Install packages if needed
 if not exist "node_modules\" (
-    echo 📦 پکیج‌ها نصب نشده‌اند. در حال نصب...
+    echo Installing packages...
     echo.
     call npm install
     if %errorlevel% neq 0 (
-        echo ❌ خطا در نصب پکیج‌ها!
+        echo ERROR: Installation failed!
         pause
         exit /b 1
     )
     echo.
-    echo ✅ نصب پکیج‌ها انجام شد!
+    echo Installation completed!
     echo.
 )
 
-echo ═══════════════════════════════════════════════════════════
+echo ========================================
 echo.
-echo 🚀 در حال اجرای سرور...
+echo Starting server...
 echo.
-echo ═══════════════════════════════════════════════════════════
+echo ========================================
 echo.
-echo   🌐 آدرس: http://localhost:3000
+echo   URL: http://localhost:3000
 echo.
-echo   🔐 اطلاعات ورود:
-echo      نام کاربری: admin
-echo      رمز عبور:   12345
+echo   Login:
+echo     Username: admin
+echo     Password: 12345
 echo.
-echo ═══════════════════════════════════════════════════════════
+echo ========================================
 echo.
-echo برای توقف: Ctrl+C
+echo Press Ctrl+C to stop
 echo.
 
-:: باز کردن مرورگر بعد از 3 ثانیه
-start "" cmd /c "timeout /t 5 /nobreak >nul && start http://localhost:3000"
+:: Open browser after 3 seconds
+start "" cmd /c "timeout /t 3 /nobreak >nul && start http://localhost:3000"
 
 call npm run dev
 pause
