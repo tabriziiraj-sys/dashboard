@@ -1,0 +1,106 @@
+HR Dashboard - Installation and Usage Guide
+=============================================
+
+BAT Files Available:
+--------------------
+
+1. HR-Dashboard.bat    - Main menu (recommended)
+2. quick-start.bat     - Quick start (install + run)
+3. install.bat         - Install packages only
+4. start.bat           - Start dev server only
+5. build.bat           - Build production version
+6. setup-and-build.bat - Full setup and build
+
+=============================================
+
+QUICK START (Recommended):
+--------------------------
+
+Double-click on: quick-start.bat
+
+This file will automatically:
+  - Check Node.js installation
+  - Install packages (if needed)
+  - Start the server
+  - Open browser
+
+=============================================
+
+STEP-BY-STEP:
+-------------
+
+Step 1: Install packages
+  -> Double-click install.bat
+  -> Or in CMD: npm install
+
+Step 2: Run project
+  -> Double-click start.bat
+  -> Or in CMD: npm run dev
+
+Step 3: Access
+  -> Browser: http://localhost:3000
+
+=============================================
+
+LOGIN INFO:
+-----------
+
+Username: admin
+Password: 12345
+
+=============================================
+
+REQUIREMENTS:
+-------------
+
+- Node.js version 18 or higher
+  Download: https://nodejs.org/
+
+- npm version 9 or higher
+  (Installed with Node.js)
+
+=============================================
+
+PROJECT PAGES:
+--------------
+
+- Main Dashboard
+- Employee Management
+- Organization Chart
+- Attendance
+- Leave Management
+- Recruitment
+- Performance
+- Learning & Development
+- Payroll
+- Turnover
+- Workforce Analytics
+- Reports
+- Excel Import/Export
+- Settings
+
+=============================================
+
+FEATURES:
+---------
+
+  - 150 Iranian sample employees
+  - 30+ Key Performance Indicators (KPI)
+  - Various analytical charts
+  - Full Persian RTL design
+  - Persian (Jalali) calendar
+  - Vazirmatn font
+  - Responsive design
+  - Dark/Light mode
+  - Excel Import/Export
+  - Global search
+  - Advanced filters
+
+=============================================
+
+SUPPORT:
+--------
+
+For issues or questions, refer to README.md
+
+=============================================

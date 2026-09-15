@@ -1,68 +1,65 @@
 @echo off
-chcp 65001 >nul
-title سیستم مدیریت منابع انسانی - همه کارها
+title HR Dashboard - Setup and Build
 echo.
-echo ╔═══════════════════════════════════════════════════════════╗
-echo ║                                                           ║
-echo ║     سیستم مدیریت منابع انسانی - نصب و اجرا              ║
-echo ║                                                           ║
-echo ╚═══════════════════════════════════════════════════════════╝
+echo ========================================
+echo   HR Dashboard - Setup and Build
+echo ========================================
 echo.
 
-:: بررسی Node.js
+:: Check Node.js
 where node >nul 2>nul
 if %errorlevel% neq 0 (
-    echo ❌ Node.js نصب نیست!
+    echo ERROR: Node.js is not installed!
     echo.
-    echo لطفاً Node.js را از آدرس زیر دانلود و نصب کنید:
+    echo Please download and install Node.js from:
     echo https://nodejs.org/
     echo.
     pause
     exit /b 1
 )
 
-echo ✅ Node.js: 
+echo Node.js version:
 node --version
 echo.
 
-:: نصب پکیج‌ها
+:: Install packages if needed
 if not exist "node_modules\" (
-    echo 📦 در حال نصب پکیج‌ها...
+    echo Installing packages...
     call npm install
     if %errorlevel% neq 0 (
-        echo ❌ خطا در نصب!
+        echo ERROR: Installation failed!
         pause
         exit /b 1
     )
-    echo ✅ نصب انجام شد!
+    echo Installation completed!
     echo.
 ) else (
-    echo ✅ پکیج‌ها قبلاً نصب شده‌اند
+    echo Packages already installed
     echo.
 )
 
 :: Build
-echo 🔨 در حال ساخت پروژه...
+echo Building project...
 call npm run build
 if %errorlevel% neq 0 (
-    echo ❌ خطا در ساخت!
+    echo ERROR: Build failed!
     pause
     exit /b 1
 )
-echo ✅ ساخت انجام شد!
+echo Build completed!
 echo.
 
-echo ═══════════════════════════════════════════════════════════
+echo ========================================
 echo.
-echo ✅ پروژه با موفقیت آماده شد!
+echo Project is ready!
 echo.
-echo 📁 فایل‌های خروجی: dist/
+echo Output files: dist/
 echo.
-echo 🚀 برای اجرای سرور توسعه:
-echo    start.bat را اجرا کنید
+echo To run dev server:
+echo    Run start.bat
 echo.
-echo 🌐 یا فایل dist/index.html را در مرورگر باز کنید
+echo Or open dist/index.html in browser
 echo.
-echo ═══════════════════════════════════════════════════════════
+echo ========================================
 echo.
 pause

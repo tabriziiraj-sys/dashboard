@@ -1,24 +1,17 @@
 @echo off
-chcp 65001 >nul
-title اجرای سیستم مدیریت منابع انسانی
+title Start HR Dashboard
 echo.
-echo ╔═══════════════════════════════════════════════════════════╗
-echo ║                                                           ║
-echo ║     سیستم مدیریت منابع انسانی - HR Dashboard             ║
-echo ║                                                           ║
-echo ╚═══════════════════════════════════════════════════════════╝
+echo ========================================
+echo   Starting HR Dashboard Server
+echo ========================================
 echo.
-echo در حال اجرای سرور توسعه...
+echo Server will run at: http://localhost:3000
 echo.
-echo ═══════════════════════════════════════════════════════════
-echo   🌐 آدرس دسترسی: http://localhost:3000
+echo Login Info:
+echo   Username: admin
+echo   Password: 12345
 echo.
-echo   🔐 اطلاعات ورود:
-echo      نام کاربری: admin
-echo      رمز عبور:   12345
-echo ═══════════════════════════════════════════════════════════
-echo.
-echo برای توقف سرور، کلیدهای Ctrl+C را فشار دهید
+echo Press Ctrl+C to stop the server
 echo.
 call npm run dev
 pause

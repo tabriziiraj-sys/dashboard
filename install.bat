@@ -1,30 +1,26 @@
 @echo off
 chcp 65001 >nul
-title نصب پکیج‌های پروژه
+title Install HR Dashboard
 echo.
-echo ╔═══════════════════════════════════════════════════════════╗
-echo ║                                                           ║
-echo ║     نصب پکیج‌های سیستم مدیریت منابع انسانی               ║
-echo ║                                                           ║
-echo ╚═══════════════════════════════════════════════════════════╝
+echo ========================================
+echo   Installing HR Dashboard Packages
+echo ========================================
 echo.
-echo در حال نصب پکیج‌های مورد نیاز...
+echo Installing required packages...
 echo.
 call npm install
 echo.
 if %errorlevel% equ 0 (
     echo.
-    echo ╔═══════════════════════════════════════════════════════════╗
-    echo ║                                                           ║
-    echo ║     ✅ نصب با موفقیت انجام شد!                           ║
-    echo ║                                                           ║
-    echo ║     برای اجرای پروژه، فایل start.bat را اجرا کنید       ║
-    echo ║                                                           ║
-    echo ╚═══════════════════════════════════════════════════════════╝
+    echo ========================================
+    echo   Installation completed successfully!
+    echo ========================================
+    echo.
+    echo Run start.bat to start the project
 ) else (
     echo.
-    echo ❌ خطا در نصب پکیج‌ها!
-    echo لطفاً Node.js و npm را بررسی کنید.
+    echo ERROR: Installation failed!
+    echo Please check Node.js and npm
 )
 echo.
 pause

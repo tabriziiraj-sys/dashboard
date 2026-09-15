@@ -1,28 +1,25 @@
 @echo off
-chcp 65001 >nul
-title سیستم مدیریت منابع انسانی - منوی اصلی
+title HR Dashboard - Main Menu
 :MENU
 cls
 echo.
-echo ╔═══════════════════════════════════════════════════════════╗
-echo ║                                                           ║
-echo ║         سیستم مدیریت منابع انسانی - HR Dashboard         ║
-echo ║                                                           ║
-echo ╠═══════════════════════════════════════════════════════════╣
-echo ║                                                           ║
-echo ║   1. نصب پکیج‌ها (اولین بار)                             ║
-echo ║                                                           ║
-echo ║   2. اجرای پروژه (Development)                           ║
-echo ║                                                           ║
-echo ║   3. ساخت نسخه Production                                ║
-echo ║                                                           ║
-echo ║   4. مشاهده راهنما                                       ║
-echo ║                                                           ║
-echo ║   5. خروج                                                ║
-echo ║                                                           ║
-echo ╚═══════════════════════════════════════════════════════════╝
+echo ========================================
+echo   HR Dashboard - Main Menu
+echo ========================================
 echo.
-set /p choice=لطفاً عدد گزینه مورد نظر را وارد کنید: 
+echo   1. Install packages (first time)
+echo.
+echo   2. Start project (Development)
+echo.
+echo   3. Build Production version
+echo.
+echo   4. View help
+echo.
+echo   5. Exit
+echo.
+echo ========================================
+echo.
+set /p choice=Enter your choice (1-5): 
 
 if "%choice%"=="1" goto INSTALL
 if "%choice%"=="2" goto START
@@ -30,7 +27,7 @@ if "%choice%"=="3" goto BUILD
 if "%choice%"=="4" goto HELP
 if "%choice%"=="5" exit
 echo.
-echo ❌ گزینه نامعتبر! لطفاً دوباره تلاش کنید.
+echo Invalid choice! Please try again.
 timeout /t 2 >nul
 goto MENU
 
@@ -49,37 +46,40 @@ goto MENU
 :HELP
 cls
 echo.
-echo ╔═══════════════════════════════════════════════════════════╗
-echo ║                      راهنمای استفاده                      ║
-echo ╚═══════════════════════════════════════════════════════════╝
+echo ========================================
+echo              HELP GUIDE
+echo ========================================
 echo.
-echo 📋 مراحل استفاده:
+echo HOW TO USE:
 echo.
-echo   1. ابتدا گزینه 1 (نصب پکیج‌ها) را اجرا کنید
-echo   2. سپس گزینه 2 (اجرای پروژه) را انتخاب کنید
-echo   3. مرورگر را باز کنید: http://localhost:3000
+echo   1. First run option 1 (Install packages)
+echo   2. Then run option 2 (Start project)
+echo   3. Open browser: http://localhost:3000
 echo.
-echo ═══════════════════════════════════════════════════════════
+echo ========================================
 echo.
-echo 🔐 اطلاعات ورود:
-echo   نام کاربری: admin
-echo   رمز عبور:   12345
+echo LOGIN INFO:
+echo   Username: admin
+echo   Password: 12345
 echo.
-echo ═══════════════════════════════════════════════════════════
+echo ========================================
 echo.
-echo 📁 فایل‌های مهم:
-echo   • install.bat  - نصب پکیج‌ها
-echo   • start.bat    - اجرای سرور توسعه
-echo   • build.bat    - ساخت نسخه Production
-echo   • README.md    - راهنمای کامل
+echo FILES:
+echo   install.bat  - Install packages
+echo   start.bat    - Start dev server
+echo   build.bat    - Build production
+echo   README.md    - Full documentation
 echo.
-echo ═══════════════════════════════════════════════════════════
+echo ========================================
 echo.
-echo 🛠 پیش‌نیازها:
-echo   • Node.js نسخه 18 یا بالاتر
-echo   • npm نسخه 9 یا بالاتر
+echo REQUIREMENTS:
+echo   Node.js 18 or higher
+echo   npm 9 or higher
 echo.
-echo ═══════════════════════════════════════════════════════════
+echo Download Node.js from:
+echo https://nodejs.org/
+echo.
+echo ========================================
 echo.
 pause
 goto MENU
